@@ -65,7 +65,11 @@ if (lowPower) mpEl.classList.add('no-blur');
 const fmt = s => isFinite(s) ? `${0|s/60}:${(0|s%60).toString().padStart(2,'0')}` : '0:00';
 const fadeVol = (to, ms = 700) => {
   const s = aud.volume, t0 = performance.now();
-  (function step(n) { const t = Math.min(1, (n - t0) / ms); aud.volume = s + (to - s) * t; if (t < 1) requestAnimationFrame(step); })(performance.now());
+  (function step(n) {
+    const t = Math.max(0, Math.min(1, (n - t0) / ms));
+    aud.volume = Math.max(0, Math.min(1, s + (to - s) * t));
+    if (t < 1) requestAnimationFrame(step);
+  })(performance.now());
 };
 const setUI = on => {
   mpBtn.classList.toggle('on', on);
