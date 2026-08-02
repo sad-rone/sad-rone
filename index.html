@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>~/profile</title>
+
+<meta name="description" content="sandrone — full-stack dev & Minecraft plugin/server builder. Backend, DevOps, and cyberpunk side-quests.">
+<meta name="theme-color" content="#000005">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="~/profile — sandrone">
+<meta property="og:description" content="full-stack dev & Minecraft plugin/server builder.">
+<meta property="og:image" content="avatar.webp">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="avatar.webp" fetchpriority="high">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="boot" aria-hidden="true">
+  <div id="bootText">INITIALIZING PROFILE.SYS...</div>
+  <div id="bootBar"><div id="bootFill"></div></div>
+</div>
+
+<div class="bg-wrap" aria-hidden="true">
+  <video id="bgVid" autoplay muted loop playsinline preload="auto">
+    <source src="background.mp4" type="video/mp4">
+  </video>
+  <div class="scrim"></div>
+</div>
+<div class="scan" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="chromatic" aria-hidden="true"></div>
+
+<audio id="bgMusic" loop preload="metadata">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<noscript>
+  <style>#boot{display:none!important} .t-wrap{opacity:1!important}</style>
+  <p style="position:relative;z-index:10;max-width:680px;margin:40px auto;padding:0 24px;font:12px/1.6 monospace;color:#c8c8e8">
+    JavaScript is disabled — this page uses it for animations and the music player, but the profile info below still works.
+  </p>
+</noscript>
+
+<div id="terminal">
+<div class="t-wrap" id="tWrap">
+
+  <div class="ascii-name glitch" id="asciiName" data-text="" role="heading" aria-level="1" aria-label="sandrone">
+███████╗ █████╗ ███╗   ██╗██████╗ ██████╗  ██████╗ ███╗   ██╗███████╗
+██╔════╝██╔══██╗████╗  ██║██╔══██╗██╔══██╗██╔═══██╗████╗  ██║██╔════╝
+███████╗███████║██╔██╗ ██║██║  ██║██████╔╝██║   ██║██╔██╗ ██║█████╗  
+╚════██║██╔══██║██║╚██╗██║██║  ██║██╔══██╗██║   ██║██║╚██╗██║██╔══╝  
+███████║██║  ██║██║ ╚████║██████╔╝██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝</div>
+
+  <div class="gap-sm"></div>
+  <div class="sep"></div>
+  <div class="gap-sm"></div>
+
+  <div class="t-line" data-delay="0">
+    <span class="prompt"><span class="prompt-path">guest@sandrone</span><span class="prompt-sym">:~$ </span></span>
+    <span class="t-out">cat <span class="t-val mag">whoami.json</span></span>
+  </div>
+  <div class="gap-sm"></div>
+
+  <div class="avatar-wrap">
+    <div class="avatar-box">
+      <div class="avatar-glitch">
+        <img src="avatar.webp" alt="Avatar portrait of sandrone" width="96" height="96" fetchpriority="high" decoding="async">
+      </div>
+      <div class="avatar-scan" aria-hidden="true"></div>
+    </div>
+    <div class="avatar-info">
+      
+      <div class="status-line"><div class="s-dot" aria-hidden="true"></div>ONLINE — Sandrone - aumygot_</div>
+      
+      <div class="t-line" style="flex-direction:column;gap:2px">
+        <div><span class="t-key">"name"     </span><span class="t-val">: "sandrone"</span></div>
+        <div><span class="t-key">"handle"   </span><span class="t-val mag">: "@sandrone"</span></div>
+        <div><span class="t-key">"location" </span><span class="t-val vio">: "Vietnam"</span></div>
+        <div><span class="t-key">"since"    </span><span class="t-val amb">: 2026</span></div>
+        <div><span class="t-key">"status"   </span><span class="t-val grn">: "building stuff"</span></div>
+      </div>
+      <div class="bio-text" id="bioEl" aria-live="polite"><span class="cur" aria-hidden="true"></span></div>
+      <div class="stack-tags">
+        <span class="tag" style="--tc:var(--magenta)">JavaScript</span>
+        <span class="tag" style="--tc:var(--cyan)">CSS</span>
+        <span class="tag" style="--tc:var(--violet)">HTML</span>
+        <span class="tag" style="--tc:var(--green)">C++</span>
+        <span class="tag" style="--tc:var(--amber)">Python</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gap-md"></div>
+  <div class="sep"></div>
+  <div class="gap-sm"></div>
+
+  <div class="t-line" data-delay="50">
+    <span class="prompt"><span class="prompt-path">guest@sandrone</span><span class="prompt-sym">:~$ </span></span>
+    <span class="t-out">cat <span class="t-val mag">skills.sh</span></span>
+  </div>
+  <div class="gap-sm"></div>
+  <div class="skill-grid" id="skillGrid">
+    <div class="sk-row"><div class="sk-name">Efficiency</div><div class="sk-track"><div class="sk-fill m" data-w="92"></div></div><div class="sk-pct">92%</div></div>
+    <div class="sk-row"><div class="sk-name">Performance</div><div class="sk-track"><div class="sk-fill c" data-w="78"></div></div><div class="sk-pct">78%</div></div>
+    <div class="sk-row"><div class="sk-name">Ram</div><div class="sk-track"><div class="sk-fill g" data-w="85"></div></div><div class="sk-pct">85%</div></div>
+  </div>
+  <div class="gap-sm"></div>
+  <div class="soc-mini">
+    <button class="soc-mini-item" type="button" id="discordCopy" style="--sc:#a855f7" aria-label="Copy Discord username">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.7 19.7 0 0 0 15.7 3l-.3.6a14 14 0 0 1 4.1 1.6 15.4 15.4 0 0 0-13 0A14 14 0 0 1 10.6 3l-.3-.6a19.7 19.7 0 0 0-4.6 1.4C2.9 8 2.2 11.5 2.5 15a19.9 19.9 0 0 0 6 3l1-1.6a12.8 12.8 0 0 1-1.9-.9l.4-.4a14.3 14.3 0 0 0 12 0l.4.4c-.6.4-1.3.6-1.9.9l1 1.6a19.8 19.8 0 0 0 6-3c.4-4-.6-7.4-2.2-10.6zM9 13.4c-.8 0-1.5-.8-1.5-1.7S8.2 10 9 10s1.5.8 1.5 1.7-.7 1.7-1.5 1.7zm6 0c-.8 0-1.5-.8-1.5-1.7S14.2 10 15 10s1.5.8 1.5 1.7-.7 1.7-1.5 1.7z"/></svg>
+      <span id="discordCopyLbl">DISCORD</span>
+    </button>
+    <a class="soc-mini-item" style="--sc:#1ed760" href="https://open.spotify.com/user/31x2vjclnxxhsvtqklsorr76qa3m" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.7.7 0 0 1-1 .2c-2.6-1.6-6-2-9.9-1.1a.7.7 0 1 1-.3-1.4c4.3-1 8-.5 10.9 1.3.4.2.5.7.3 1zm1.2-2.7a.9.9 0 0 1-1.2.3c-3-1.8-7.5-2.4-11-1.3a.9.9 0 1 1-.6-1.7c4-1.2 9-.6 12.5 1.5.4.3.5.9.3 1.2zm.1-2.8C14.4 8.7 8.7 8.5 5.4 9.5a1 1 0 1 1-.6-2c3.8-1.2 10.1-1 14 1.3a1 1 0 1 1-1.1 1.7z"/></svg>
+      <span>SPOTIFY</span>
+    </a>
+    <a class="soc-mini-item" style="--sc:#1877f2" href="https://www.facebook.com/hyalazz/" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.9.2-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.5V21h3.1z"/></svg>
+      <span>FACEBOOK</span>
+    </a>
+    <a class="soc-mini-item" style="--sc:#e2e2e2" href="https://github.com/sand-rone" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.6 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .6 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.7 0 3.8-2.4 4.6-4.6 4.9.4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>
+      <span>GITHUB</span>
+    </a>
+    <a class="soc-mini-item" style="--sc:#107c10" href="https://www.xbox.com/vi-VN/play/user/Banbao9391" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.2 18.9c1.9 2 4.7 3.1 7.8 3.1s5.9-1.1 7.8-3.1c.6-.7-1.6-3.6-4.4-6-1.1-1-2.3-1.8-3.4-2.6-1.1.8-2.3 1.6-3.4 2.6-2.8 2.4-5 5.3-4.4 6zM12 2a10 10 0 0 0-6.1 2c1.5.2 4 1.6 6.1 3.6C14.1 5.6 16.6 4.2 18.1 4A10 10 0 0 0 12 2zm8.6 4.7c-.8-.2-3.6.5-6.3 2.8 2.8 2.7 5.7 6.3 5.3 8.2a10 10 0 0 0 1-9.9c0-.4 0-.8 0-1.1zM3.4 6.7c0 .3 0 .7 0 1.1a10 10 0 0 0 1 9.9c-.4-1.9 2.5-5.5 5.3-8.2C7 7.2 4.2 6.5 3.4 6.7z"/></svg>
+      <span>XBOX</span>
+    </a>
+  </div>
+
+  <div class="gap-md"></div>
+  <div class="sep"></div>
+  <div class="gap-sm"></div>
+
+  <div class="t-line" data-delay="100">
+    <span class="prompt"><span class="prompt-path">guest@sandrone</span><span class="prompt-sym">:~$ </span></span>
+    <span class="t-out">cat <span class="t-val mag">stats.log</span></span>
+  </div>
+  <div class="gap-sm"></div>
+  <div class="stats-row">
+    <div class="st"><div class="st-val" id="viewCount">0</div><div class="st-lbl">VIEWS</div></div>
+    <div class="st"><div class="st-val">2026</div><div class="st-lbl">SINCE</div></div>
+    <div class="st"><div class="st-val">Iron</div><div class="st-lbl">Engder</div></div>
+    <div class="st"><div class="st-val" id="uptime">--</div><div class="st-lbl">UPTIME</div></div>
+  </div>
+
+  <div class="gap-md"></div>
+  <div class="sep"></div>
+  <div class="gap-sm"></div>
+
+  <div class="t-line" data-delay="150">
+    <span class="prompt"><span class="prompt-path">guest@sandrone</span><span class="prompt-sym">:~$ </span></span>
+    <span class="t-out">ls <span class="t-val mag">./projects/</span></span>
+  </div>
+  <div class="t-line" data-delay="200">
+    <span class="prompt"><span class="prompt-path">guest@sandrone</span><span class="prompt-sym">:~$ </span></span>
+    <span class="t-out">cat <span class="t-val mag">contact.txt</span></span>
+  </div>
+  <div class="gap-sm"></div>
+  <div class="gap-md"></div>
+  <div class="t-line">
+    <span class="prompt"><span class="prompt-path">guest@sandrone</span><span class="prompt-sym">:~$ </span></span>
+    <span class="t-comment"># try: ↑↑↓↓←→←→BA</span>
+  </div>
+  <div class="gap-md"></div>
+
+</div>
+</div>
+
+<div class="mp" id="mp">
+  <button class="mp-btn" id="mpBtn" type="button" aria-label="Play or pause background music" aria-pressed="false">
+    <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+  </button>
+  <div class="mp-eq" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="mp-viz-pod"><canvas class="mp-viz" id="mpViz" aria-hidden="true"></canvas></div>
+  <div class="mp-center">
+    <div class="mp-label">NOW PLAYING — <span id="mpSong">music.mp3</span></div>
+    <input type="range" class="mp-track" id="mpSeek" min="0" max="1000" value="0" step="0.1" aria-label="Seek track position">
+    <div class="mp-time"><span id="mpCur">0:00</span><span id="mpDur">0:00</span></div>
+  </div>
+</div>
+
+<div id="konami" role="dialog" aria-label="Snake mini-game" aria-hidden="true">
+  <div class="k-title">// CHEAT CODE ACTIVATED</div>
+  <canvas id="snakeCanvas" width="300" height="300"></canvas>
+  <div class="k-sub">ARROW KEYS TO PLAY — SNAKE</div>
+  <button class="k-close" id="konamiClose" type="button">[ ESC TO EXIT ]</button>
+</div>
+
+<script src="perf.js" defer></script>
+<!-- React 18.3.1 here (not 19.x): UMD builds were removed from React
+     starting at v19, so this is the newest version unpkg can still serve
+     as a plain <script> global for a no-bundler page like this one.
+     @types/react in package.json is pinned to 19.x purely for tsc
+     type-checking perf-widget.tsx; the createRoot API it uses is
+     identical across 18/19 at runtime, so this split is safe. -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin defer></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin defer></script>
+<script src="perf-widget.js" defer></script>
+<script src="music-viz.js" defer></script>
+<script src="scripts.js" defer></script>
+</body>
+</html>

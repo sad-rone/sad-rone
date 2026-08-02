@@ -1,0 +1,12 @@
+{
+  "name": "sandrone — profile",
+  "short_name": "sandrone",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#000005",
+  "theme_color": "#000005",
+  "icons": [
+    { "src": "favicon.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

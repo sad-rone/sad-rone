@@ -1,0 +1,32 @@
+[package]
+name = "particle-system"
+version = "0.1.0"
+edition = "2021"
+description = "Cyberpunk profile background particle system, compiled to WASM"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+js-sys = "0.3"
+
+[dependencies.web-sys]
+version = "0.3"
+features = [
+  "console",
+  "Window",
+  "Document",
+  "Element",
+  "HtmlCanvasElement",
+  "CanvasRenderingContext2d",
+  "CanvasGradient",
+]
+
+# Smaller / faster wasm output. `opt-level = "z"` trims size further if you
+# want that instead of "3" (raw speed) — for ~60 particles either is plenty.
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"

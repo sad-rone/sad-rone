@@ -1,0 +1,16 @@
+{
+  "name": "particle-system",
+  "type": "module",
+  "description": "Cyberpunk profile background particle system, compiled to WASM",
+  "version": "0.1.0",
+  "files": [
+    "particle_system_bg.wasm",
+    "particle_system.js",
+    "particle_system.d.ts"
+  ],
+  "main": "particle_system.js",
+  "types": "particle_system.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
