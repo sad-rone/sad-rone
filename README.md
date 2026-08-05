@@ -1,18 +1,18 @@
-# Profile Sandrone
+# pờ rô pai sát ron
 
 Cyberpunk-terminal-style personal profile page. Static frontend with two
 effect modules offloaded to WASM (Rust + C++), a Canvas 2D + CSS-animation
 frontend layer (no Three.js/WebGL), and a small Go backend for the view
 counter.
 
-## Stack
+## sờ tách
 
 - **Frontend**: vanilla HTML/CSS/JS + TypeScript (`perf.ts`, `perf-widget.tsx`)
 - **Particle system**: Rust → WASM (`lib.rs`, `Cargo.toml`)
 - **Matrix rain / image glitch effects**: C++ → WASM via Emscripten (`cpp-fx/effects.cpp`)
 - **View counter API**: Go (`main.go`)
 
-## Build
+## Bui
 
 `pkg-cpp/` (C++ → WASM, powers matrix rain + image glitch) is checked
 into the repo as a prebuilt snapshot, so those two effects work without
