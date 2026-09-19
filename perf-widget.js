@@ -1,13 +1,4 @@
-'use strict';
-/**
- * perf-widget.tsx — tiny React HUD showing the current quality tier.
- *
- * Reads only from window.PerfManager (perf.ts). Since perf.ts no longer
- * samples FPS at runtime, this widget just reflects the tier — hidden by
- * default (it's a debug aid, not part of the site's look), toggle with
- * Shift+P. No bundler: compiled by tsc ("jsx": "react") to plain JS,
- * React/ReactDOM come from CDN <script> tags as UMD globals.
- */
+
 (function mountPerfWidget() {
     const w = window;
     const mgr = w.PerfManager;
