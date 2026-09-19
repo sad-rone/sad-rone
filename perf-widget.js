@@ -25,8 +25,7 @@
             return () => window.removeEventListener('keydown', onKey);
         }, []);
         useEffect(() => {
-            // Subscribed regardless of `visible` so the tier shown right after
-            // toggling the HUD back on is current, not stale from while hidden.
+            
             const offChange = mgr.onChange(setQuality);
             return () => offChange();
         }, []);
