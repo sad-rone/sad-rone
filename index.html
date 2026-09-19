@@ -203,12 +203,7 @@
 </div>
 
 <script src="perf.js" defer></script>
-<!-- React 18.3.1 here (not 19.x): UMD builds were removed from React
-     starting at v19, so this is the newest version unpkg can still serve
-     as a plain <script> global for a no-bundler page like this one.
-     @types/react in package.json is pinned to 19.x purely for tsc
-     type-checking perf-widget.tsx; the createRoot API it uses is
-     identical across 18/19 at runtime, so this split is safe. -->
+
 <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin defer></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin defer></script>
 <script src="perf-widget.js" defer></script>
