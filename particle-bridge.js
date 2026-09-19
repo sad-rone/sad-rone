@@ -19,7 +19,7 @@ import init, { ParticleSystem } from './pkg/particle_system.js';
   }
 
   await init(); // fetches + instantiates pkg/particle_system_bg.wasm
-  pc.classList.add('ready'); // CSS fades opacity 0 -> 1 (see style.css)
+  pc.classList.add('ready'); 
 
   let system = new ParticleSystem(
     pc,
@@ -47,8 +47,7 @@ import init, { ParticleSystem } from './pkg/particle_system.js';
         return;
       }
       if (!system) {
-        // Recovering from minimal — re-create rather than leaving the
-        // canvas permanently blank for the rest of the session.
+        
         pc.style.display = '';
         system = new ParticleSystem(pc, innerWidth, innerHeight, q, (Date.now() >>> 0));
         pc.classList.add('ready');
@@ -59,10 +58,6 @@ import init, { ParticleSystem } from './pkg/particle_system.js';
     });
   }
 
-  // scripts.js's existing masterLoop drives one single requestAnimationFrame
-  // for the whole page (ring, trail, magnetic hover, particles). Rather than
-  // run a second rAF loop here, expose a step function it can call — same
-  // low/skip-frame throttling logic in scripts.js keeps working unchanged,
-  // it just calls into WASM instead of the old JS particlesStep().
+  
   window.__particlesStep = (timestampMs) => system && system.step(timestampMs);
 })();
