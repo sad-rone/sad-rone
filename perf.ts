@@ -1,24 +1,6 @@
 'use strict';
 
-/**
- * perf.ts — lightweight adaptive-quality manager.
- *
- * Picks a quality tier once at load time from device signals
- * (CPU cores, RAM, Save-Data, reduced-motion, screen size) and exposes it —
- * plus a couple of small helpers — on `window.PerfManager` so any other
- * script (or CSS, via `html[data-perf]`) can scale itself down on weaker
- * devices without re-implementing this detection.
- *
- * No runtime FPS sampling: no rAF loop, no PerformanceObserver, no periodic
- * re-evaluation. The tier is decided once and stays put — cheaper and
- * simpler, at the cost of not reacting to mid-session slowdowns.
- *
- * No framework, no build step required beyond `tsc` — this compiles to a
- * plain classic script (tsconfig.json uses module "commonjs", but since
- * this file has no import/export statements, no module wrapper is ever
- * emitted) and is loaded
- * with a plain <script> tag before scripts.js.
- */
+
 
 type Quality = 'high' | 'medium' | 'low' | 'minimal';
 
