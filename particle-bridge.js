@@ -1,14 +1,3 @@
-// particle-bridge.js — boots the Rust/WASM particle system and wires it
-// into the site's existing performance/animation plumbing.
-//
-// Load this AFTER perf.js and BEFORE scripts.js's defer scripts run isn't
-// required (this is a module, modules always run after classic <script
-// defer>, in document order relative to other modules) — but do add
-// `<script type="module" src="particle-bridge.js"></script>` to index.html.
-//
-// Requires the wasm-pack build output at ./pkg/ next to this file:
-//   wasm-pack build --target web --release
-// (see particle-system/ for the crate + build instructions)
 
 import init, { ParticleSystem } from './pkg/particle_system.js';
 
