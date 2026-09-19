@@ -28,15 +28,13 @@
             try {
                 cb(quality);
             }
-            catch (_a) { /* one bad listener shouldn't break the rest */ }
+            catch (_a) 
         }
     }
     document.addEventListener('visibilitychange', () => {
         visible = !document.hidden;
     }, { passive: true });
-    // Re-check the static signals on resize/orientation change (e.g. rotating
-    // a tablet, or a small-screen media query flipping) — still no per-frame
-    // sampling, just re-running the same cheap guess.
+    
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
