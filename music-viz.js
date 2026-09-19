@@ -1,7 +1,4 @@
-// music-viz.js — Canvas 2D frequency-bar visualizer for the music player.
-// Replaces the old three.js audio-reactive orb: same Web Audio analyser,
-// but painted as flat 2D bars instead of a WebGL wireframe mesh. Falls
-// back to the static CSS .mp-eq bars if Web Audio can't be wired up.
+
 
 (() => {
   const mpEl = document.getElementById('mp');
